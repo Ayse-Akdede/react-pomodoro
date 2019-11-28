@@ -1,0 +1,49 @@
+body {
+    main {
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            font-size: 4rem;
+            font-weight: 500;
+            color: Blue;
+        }
+        h4 {
+            text-align: center;
+        }
+
+        .interval-container {
+            display: flex;
+            margin: 0 40px;
+            align-items: center;
+        }
+
+        .interval-length-container {
+            display: flex;
+        }
+
+        .interval-length {
+            font-size: 2rem;
+            margin: 0 10px;
+        }
+
+        .timer-container {
+            margin-top: 40px;
+            border-radius: 25px;
+            width: 250px;
+            text-align: center;
+            padding: 10px;
+
+            .timer {
+                font-size: 2rem;
+            }
+        }
+        .timer-actions {
+            text-align: center;
+            margin: auto;
+        }
+    }
+}
