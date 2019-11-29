@@ -1,4 +1,6 @@
 import React from "react";
+import hauts from "/src/img/hauts.png";
+import bas from "/src/img/bas.png";
 
 function SessionLength(props) {
     function increaseSession() {
@@ -15,21 +17,27 @@ function SessionLength(props) {
     }
 
     return (
-        <section>
-            <h4>Set work time</h4>
-            <section className="interval-container">
-                <button
-                    disabled={props.isPlay === true ? "disabled" : ""}
-                    onClick={decreaseSession}>
-                    Down
-                </button>
-                <p className="interval-length">{props.sessionLength}</p>
-                <button
-                    disabled={props.isPlay === true ? "disabled" : ""}
-                    onClick={increaseSession}>
-                    Up
-                </button>
-            </section>
+        <section id="session-time">
+            <fieldset>
+                <legend align="center">
+                    <h4>Set work time</h4>
+                </legend>
+                <section className="interval-container">
+                    <button
+                        disabled={props.isPlay === true ? "disabled" : ""}
+                        onClick={decreaseSession}
+                        title="Decrease minutes">
+                        <img src={bas} alt="decrease" />
+                    </button>
+                    <p className="interval-length">{props.sessionLength}</p>
+                    <button
+                        disabled={props.isPlay === true ? "disabled" : ""}
+                        onClick={increaseSession}
+                        title="Increase minutes">
+                        <img src={hauts} alt="increase" />
+                    </button>
+                </section>
+            </fieldset>
         </section>
     );
 }

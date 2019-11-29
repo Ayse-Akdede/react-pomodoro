@@ -1,5 +1,7 @@
 import React from "react";
-import Switch from "react-switch";
+import stops from "/src/img/stops.png";
+import reset from "/src/img/reset.png";
+import start from "/src/img/start.png";
 
 class Timer extends React.Component {
     constructor() {
@@ -24,16 +26,10 @@ class Timer extends React.Component {
         this.setState({
             intervalId: intervalId,
         });
-        this.state({
-            text: "Start",
-        });
     }
     stopTimer() {
         clearInterval(this.state.intervalId);
         this.props.onPlayStopTimer(false);
-        this.setState({
-            text: "Stop",
-        });
     }
     decreaseTimer() {
         switch (this.state.timerSecond) {
@@ -82,24 +78,36 @@ class Timer extends React.Component {
 
     render() {
         return (
-            <section>
-                <section className="timer-container">
-                    <h4>{this.state.isSession === true ? "Work" : "Break"}</h4>
-                    <span className="timer">{this.props.timerMinute}</span>
-                    <span className="timer">:</span>
-                    <span className="timer">
-                        {this.state.timerSecond === 0
-                            ? "00"
-                            : this.state.timerSecond < 10
-                            ? "0" + this.state.timerSecond
-                            : this.state.timerSecond}
-                    </span>
-                </section>
-                <section className="timer-actions">
-                    <button onClick={this.playTimer}>Start</button>
-                    <button onClick={this.stopTimer}>Stop</button>
-                    <button onClick={this.resetTimer}>Restart</button>
-                </section>
+            <section id="timer-clock">
+                <fieldset>
+                    <legend align="center">
+                        <h3>
+                            {this.state.isSession === true ? "Work" : "Break"}
+                        </h3>
+                    </legend>
+                    <section className="timer-container">
+                        <span className="timer">{this.props.timerMinute}</span>
+                        <span className="timer">:</span>
+                        <span className="timer">
+                            {this.state.timerSecond === 0
+                                ? "00"
+                                : this.state.timerSecond < 10
+                                ? "0" + this.state.timerSecond
+                                : this.state.timerSecond}
+                        </span>
+                    </section>
+                    <section className="timer-actions">
+                        <button onClick={this.playTimer} title="Start">
+                            <img class="timer-logo" src={start} alt="" />
+                        </button>
+                        <button onClick={this.stopTimer} title="Stop">
+                            <img class="timer-logo" src={stops} alt="" />
+                        </button>
+                        <button onClick={this.resetTimer} title="Reset">
+                            <img class="timer-logo" src={reset} alt="" />
+                        </button>
+                    </section>
+                </fieldset>
             </section>
         );
     }

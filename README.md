@@ -13,5 +13,4 @@ This is the [tutorial](https://github.com/ArzhMael/how-to-start-a-react-project-
 ## Pomodoro Clock
 
 Like everyone else in this Jepsen class, I watched the youtube video [Build A Pomodoro Clock In React by
-Nsquared Coding
-](https://www.youtube.com/watch?v=9EVmiQCfkuQ)
+Nsquared Coding](https://www.youtube.com/watch?v=9EVmiQCfkuQ)
